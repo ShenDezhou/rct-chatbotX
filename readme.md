@@ -2,6 +2,7 @@
 `
 修改~/.bash_profile，增加
 export PATH=$PATH:/usr/local/mysql/bin/
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/mysql/lib
 `
 
 #1. 安装git+https://github.com/morteza31/ChatterBot.git库

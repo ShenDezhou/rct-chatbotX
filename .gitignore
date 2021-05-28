@@ -1,0 +1,25 @@
+.env
+api/v1/bots/test
+
+venv
+.idea/
+env
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/*
+migrations/__pycache__/*
+migrations/versions/__pycache__/*
+config/__pycache__/*
+bin
+include
+lib
+pyvenv.cfg
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyc
+*.DS_Store
+db.sqlite3
+data/

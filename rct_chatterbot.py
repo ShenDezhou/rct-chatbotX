@@ -7,10 +7,10 @@ import requests
 MEDUSA='http://180.76.119.236:5000'
 #create
 name = "rct-qi-liuli"
-key = '99aa69b0-599c-4d0f-81f7-a4f3825ac5f8'
+key = '99b6be11-b1da-4e6a-b727-419501fbdca6'
 create = False
 train = False
-
+test = True
 if create:
     create_api = MEDUSA+'/api-v1/bot/create/'
     header = {'Authorization': '9aGM5qSvaTUQvWHfdJvLuY7g3BdR4gSReSXJAzWARjkX2x6H',
@@ -38,13 +38,14 @@ if train:
     msg = r.json()['response']
     print(msg)
 
-payload = {'key': key, 'name':name, 'text': '什么是ai'}
-response_api = MEDUSA+'/api-v1/bot/get_response?' + urllib.parse.urlencode(payload)
-r = requests.get(response_api)
-print(r.json())
-response = r.json()['response']
-print(payload['text'])
-print(response)
+if test:
+    payload = {'key': key, 'name':name, 'text': '什么是ai'}
+    response_api = MEDUSA+'/api-v1/bot/get_response?' + urllib.parse.urlencode(payload)
+    r = requests.get(response_api)
+    print(r.json())
+    response = r.json()['response']
+    print(payload['text'])
+    print(response)
 
 
 

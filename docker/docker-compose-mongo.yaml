@@ -1,0 +1,28 @@
+version: '2'
+services:
+  mongo:
+    image: mongo:4.2.0
+    command: mongod
+    container_name: mongo-server
+    network_mode: host
+    restart: always
+#    ports: [ "37017:27017" ]
+#    networks:
+#      - rct_backend
+    volumes:
+      - rct_mongo_data:/data/db
+      - rct_log:/var/log/mongodb
+#    healthcheck:
+#      test: ["CMD", "echo",'db.runCommand("ping").ok', "|", "mongo", "mongo:27017/test", "--quiet"]
+#      interval: 10s
+#      timeout: 10s
+#      retries: 5
+
+volumes:
+  rct_mongo_data:
+  rct_log:
+
+networks:
+  rct_backend:
+    external: true
+    driver: bridge

@@ -1,0 +1,17 @@
+version: '2'
+services:
+  web:
+    image: bangtech/medusa_chatbot:latest
+    command: ['flask','run','--host=0.0.0.0']
+    container_name: medusa_chatbot
+    network_mode: host
+    restart: always
+
+volumes:
+  rct_mongo_data:
+  rct_log:
+
+networks:
+  rct_backend:
+    external: true
+    driver: bridge

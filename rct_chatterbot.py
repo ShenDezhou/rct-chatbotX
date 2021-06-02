@@ -7,7 +7,7 @@ import requests
 MEDUSA='http://localhost:5000'
 #create
 name = "rct-qi-liuli-20210601"
-key = 'ac92ffbf-bf43-400f-9f1f-1f363d340b5e'
+key = 'd30549e1-b50a-4e8c-a20a-8cec8539e9e2'
 create = False
 train = True
 test = False
@@ -28,7 +28,7 @@ if train:
     payload = {
         "name": name,
         'key': key,
-        'file': ('file', open('data/sms.yml', 'rb'), 'text/plain')
+        'file': ('file', open('data/sms1.yml', 'rb'), 'text/plain')
     }
     m = MultipartEncoder(fields=payload)
     header = {'Authorization': '9aGM5qSvaTUQvWHfdJvLuY7g3BdR4gSReSXJAzWARjkX2x6H',

@@ -4,7 +4,11 @@ services:
     image: mongo:4.2.0
     command: mongod
     container_name: mongo-server
-    network_mode: host
+#    network_mode: host
+    networks:
+      - rct_backend
+    ports:
+      - "27017:27017"
     restart: always
 #    ports: [ "37017:27017" ]
 #    networks:

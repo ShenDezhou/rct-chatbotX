@@ -4,13 +4,13 @@ import json
 
 import requests
 
-MEDUSA='http://180.76.119.236:5000'
+MEDUSA='http://localhost:5000'
 #create
-name = "rct-qi-liuli"
-key = '99b6be11-b1da-4e6a-b727-419501fbdca6'
+name = "rct-qi-liuli-20210601"
+key = 'ac92ffbf-bf43-400f-9f1f-1f363d340b5e'
 create = False
-train = False
-test = True
+train = True
+test = False
 if create:
     create_api = MEDUSA+'/api-v1/bot/create/'
     header = {'Authorization': '9aGM5qSvaTUQvWHfdJvLuY7g3BdR4gSReSXJAzWARjkX2x6H',
@@ -28,7 +28,7 @@ if train:
     payload = {
         "name": name,
         'key': key,
-        'file': ('file', open('data/ai.yml', 'rb'), 'text/plain')
+        'file': ('file', open('data/sms.yml', 'rb'), 'text/plain')
     }
     m = MultipartEncoder(fields=payload)
     header = {'Authorization': '9aGM5qSvaTUQvWHfdJvLuY7g3BdR4gSReSXJAzWARjkX2x6H',

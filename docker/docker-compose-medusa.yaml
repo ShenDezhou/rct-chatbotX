@@ -2,10 +2,17 @@ version: '2'
 services:
   web:
     image: bangtech/medusa_chatbot:latest
-    command: ['flask','run','--host=0.0.0.0']
+    command: ['sh', 'start_medusa.sh']
     container_name: medusa_chatbot
-    network_mode: host
+    networks:
+      - rct_backend
+#    network_mode: host
     restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+    - "/Users/tsinghuaboy/projects/rct-chatbotX/docker/.env:/workspace/.env"
+    - "/Users/tsinghuaboy/projects/rct-chatbotX/docker/start_medusa.sh:/workspace/start_medusa.sh"
 
 volumes:
   rct_mongo_data:
